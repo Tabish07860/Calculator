@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="1741621373031.jpg" type="image/x-icon">
+    <title>Calculator</title>
+</head>
+<style>@import url('https://fonts.goggleapis.com/css2?family+Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
+
+.text-center{
+    text-align: center;
+}
+
+.bg-red{
+    background: red;
+}
+
+.mx-auto{
+    margin: auto;
+}
+
+.flex {
+display: flex;
+}
+
+.flex-col{
+flex-direction: column;
+}
+
+.items-center{
+    align-items: center;
+}    
+html, body {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#cfcfcf, #ffffff);
+        font-family: 'Roboto', sans-serif
+    }
+    
+    .button{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: #ffffff;
+    }
+    
+    .buttonp{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: #ffffff;
+        font-weight: 900;
+    }
+    
+    .button-{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: #ffffff;
+        -webkit-text-fill-color: rgb(71, 129, 236);
+        font-size: large;
+    }
+    
+    .buttons{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: #ffffff;
+        -webkit-text-fill-color: rgb(71, 129, 236);
+        
+    }
+    
+    
+    .wow{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: rgb(71, 129, 236);
+        -webkit-text-fill-color: white;
+        font-size: large;
+    }
+    
+    .c{
+        padding: 1px;
+        margin: 0 3px;
+        border: 2px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        -webkit-text-fill-color: red;
+        font-weight: bold;
+        background-color: white;
+    }
+    .row{
+        margin: 07px 0;
+    }
+    
+    .row input{
+        font-size: 23px;
+        margin: 09px 0;
+        padding: 0;
+        height: 45px;
+        width: 249px;
+        border: 2.5px solid black;
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255);
+    }</style>
+<body>
+    <br><br>
+    <h1 class="text-center">Calculator</h1>
+    <br>
+    <div class="container flex flex-col mx-auto m-w-20 items-center" >
+        <div class="row">
+            <input class="input" type="text">
+            <br><br>
+        </div>
+        <div class="row">
+            <button class="button">Clear</button>
+            <button class="button">Delete</button>
+            <button class="button">/</button>
+            <button class="button">%</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">-</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">00</button>
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+        </div>
+
+
+    </div>
+    <script>let string = "";
+        let buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button)=>{
+        button.addEventListener('click', (e)=>{
+            if(e.target.innerHTML == '='){
+                string = eval(string);
+                document.querySelector('input').value = string;
+            }
+            else if(e.target.innerHTML == 'Clear'){
+                string = "";
+                document.querySelector('input').value = string;
+            }        
+            else if(e.target.innerHTML == 'Delete'){
+            string = string.substring(0,string.length-1);
+            document.querySelector('input').value = string;
+            }
+        
+            else{
+            console.log(e.target)
+            string = string + e.target.innerHTML;
+            document.querySelector('input').value = string;
+            } 
+            })
+        })</script>
+</body>
+</html>
